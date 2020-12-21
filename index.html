@@ -98,7 +98,7 @@
           <!-- New git -->
 
           <!-- Push new remote -->
-          <span data-toggle="modal" data-target="#new_git"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Push new local repo to Github">Push to remote</button></span>
+          <span data-toggle="modal" data-target="#push_remote"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Push new local repo to Github">Push to remote</button></span>
           <div id="new_git" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="push_remote_title">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
@@ -131,6 +131,32 @@
         <!-- End Getting Started -->
 
         <div class="well"><h3>Fix a mess</h3>
+
+          <!-- amend Commit -->
+          <span data-toggle="modal" data-target="#amend_last_commit"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Amend a bad last commit">Amend last commit</button></span>
+          <div id="new_git" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="new_git_title">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 id="amend_last_commit" class="modal-title">Amend last commit</h4>
+                </div>
+                <div class="modal-body">
+                  <p><code>git add <i>updated_file</i></code></p>
+                  <p><code>git commit --amend -no-edit</code></p>
+                  <p>optional, <code>git push -f</code></p>
+                  <p>Update last commit with typo fix, etc</p>
+                  <dl>
+                    <dt>--amend</dt><dd>flag to add staged changes to last commit</dd>
+                    <dt>--no-edit</dt><dd>flag to say last commit message is still good</dd>
+                    <dt>-f</dt><dd>flag to overwrite any change in the remote repository, generally bad practice</dd>
+                  </dl>
+                  <p class="link"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Amend Commit -->
 
           <!-- Fix a mess -->
           <span data-toggle="modal" data-target="#default_ignore"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Automatic .gitignore">"Please commit or stash"</button></span>
