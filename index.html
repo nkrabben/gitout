@@ -42,7 +42,7 @@
 
           <!-- Good defaults -->
           <span data-toggle="modal" data-target="#default_ignore"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Automatic .gitignore">Create default .gitignore</button></span>
-          <div id="new_git" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="default_ignore_title">
+          <div id="default_ignore" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="default_ignore_title">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
@@ -97,8 +97,137 @@
           </div>
           <!-- New git -->
 
+          <!-- Push new remote -->
+          <span data-toggle="modal" data-target="#new_git"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Push new local repo to Github">Push to remote</button></span>
+          <div id="new_git" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="push_remote_title">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 id="push_remote" class="modal-title">Push new local repo to remote</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Follow instructions on <code>https://github.com/new</code></p>
+                  <p>On you command line, <code>git remote add <i>origin</i> git@github.com:<i>NYPL/bagout.git</i></code></p>
+                  <p><code>git branch -M main</code></p>
+                  <p><code>git push -u origin main</code></p>
+                  <p>Creates a repository at Github, adds remote to local repository, and pushes up.</p>
+                  <dl>
+                    <dt>git remote add</dt><dd>adds a new remote location for your local git</dd>
+                    <dt><i>origin</i></dt><dd>the default name for the default remote repository</dd>
+                    <dt>git@github.com:<i>NYPL/bagout.git</i></dt><dd>the location and authentication for the remote repository, git@github.com assumes you have ssh configured</dd>
+                    <dt>git branch -M main</dt><dd>rename default branch to 'main' in case it defaulted to 'master'</dd>
+                    <dt>git push main</dt><dd>sync main branch to remote</dd>
+                    <dt>-u origin</dt><dd>set the default remote branch to the location stored as 'origin'</dd>
+                  </dl>
+                  <p class="link"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Push new remote -->
+
         </div>
         <!-- End Getting Started -->
+
+        <div class="well"><h3>Fix a mess</h3>
+
+          <!-- Fix a mess -->
+          <span data-toggle="modal" data-target="#default_ignore"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Automatic .gitignore">"Please commit or stash"</button></span>
+          <div id="git_stash" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="git_stash_title">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 id="git_stash" class="modal-title">Please commit or stash</h4>
+                </div>
+                <div class="modal-body">
+                  <p><code>git stash</code></p>
+                  <p><code>git checkout <i>branch</i></code></p>
+                  <p><code>git stash checkout <i>branch</i></code></p>
+                  <p><code>nano ~/.git_templates/.gitignore</code></p>
+                  <p>Creates a hidden folder to hold templates, configures git to use that folder, and then adds a .gitignore</p>
+                  <dl>
+                    <dt>mkdir</dt><dd>create a directory</dd>
+                    <dt>~/.git_templates</dt><dd>the directory that will hold the git templates, can be named and located somewhere else</dd>
+                    <dt>git config</dt><dd>access the configurable settings of git</dd>
+                    <dt>--global</dt><dd>settings that affect all repositories on your machine</dd>
+                    <dt>init.templatedir</dt><dd>the location of the templates used when a git repository is first created</dd>
+                    <dt>nano</dt><dd>a command line text editor, other editors can be used like vi or subl</dd>
+                    <dt>~/.git_templates/.gitignore</dt><dd>a file used to define what files git should ignore</dd>
+                  </dl>
+                  <p class="link"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Good defaults -->
+
+          <!-- Merge conflict -->
+          <span data-toggle="modal" data-target="#new_git"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Start a new git repository">New Git Repo</button></span>
+          <div id="new_git" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="new_git_title">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 id="new_git" class="modal-title">Start a new git repository</h4>
+                </div>
+                <div class="modal-body">
+                  <p><code>mkdir <i>repo-name</i></code></p>
+                  <p><code>cd <i>repo-name</i></code></p>
+                  <p><code>git init .</code></p>
+                  <p>Creates a new directory and then initializes git versional control for the contents of that directory.</p>
+                  <dl>
+                    <dt>mkdir</dt><dd>create a directory</dd>
+                    <dt><i>destination</i></dt><dd>the directory that will hold the git repo</dd>
+                    <dt>cd</dt><dd>move terminal into the directory</dd>
+                    <dt>git init</dt><dd>initialize the directory as a git repository by creating the hidden folder that track versioning</dd>
+                  </dl>
+                  <p class="link"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Merge conflict -->
+
+        </div>
+        <!-- End Fix a mess -->
+
+
+        <!-- Fix a bad setup -->
+        <div class="well"><h3>Fix a mess</h3>
+
+          <!-- Kill master -->
+          <span data-toggle="modal" data-target="#new_git"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Start a new git repository">New Git Repo</button></span>
+          <div id="new_git" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="new_git_title">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 id="new_git" class="modal-title">Start a new git repository</h4>
+                </div>
+                <div class="modal-body">
+                  <p><code>git branch -m master main</code></p>
+                  <p><code>git push -u origin main</code></p>
+                  <p><code>git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/main</code></p>
+                  <p><i>go to remote repository and update default branch</i></p>
+                  <p><code>git push origin --delete master</code></p>
+                  <p>Changes the default branch of the git repository to main cuz master is a crap name for it</p>
+                  <dl>
+                    <dt>git branch -m master main</dt><dd>move a branch to from one name to another</dd>
+                    <dt>git push -u origin main</dt><dd>push the local main branch to the remote named origin</dd>
+                    <dt>git symbolic-ref</dt><dd>change the references in git to the new branch</dd>
+                    <dt>git push origin --delete</dt><dd>delete the remote branch</dd>
+                  </dl>
+                  <p class="link"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Kill master -->
+
+        </div>
+
       </div>
 
       <div class="footer text-center"><!-- FOOBAR credit appropriately -->
